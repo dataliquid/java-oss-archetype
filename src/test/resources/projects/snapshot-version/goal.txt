@@ -1,1 +1,1 @@
-validate
+clean test
