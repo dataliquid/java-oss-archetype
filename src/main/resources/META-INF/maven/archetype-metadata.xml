@@ -21,6 +21,12 @@
         <requiredProperty key="javaVersion">
             <defaultValue>17</defaultValue>
         </requiredProperty>
+        <requiredProperty key="gitignore">
+            <defaultValue>.gitignore</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="github">
+            <defaultValue>.github</defaultValue>
+        </requiredProperty>
     </requiredProperties>
 
     <fileSets>
