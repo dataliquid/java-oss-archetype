@@ -34,7 +34,15 @@ assert new File(projectDir, ".gitignore").exists()
 def ciWorkflow = new File(projectDir, ".github/workflows/ci.yml")
 def ciContent = ciWorkflow.text
 assert ciContent.contains("java: [ 21")
-assert ciContent.contains("java-version: '21'") // In gitflow workflows
+
+// Check gitflow workflows have Java 21
+def gitflowRelease = new File(projectDir, ".github/workflows/gitflow-release.yml")
+def gitflowReleaseContent = gitflowRelease.text
+assert gitflowReleaseContent.contains("java-version: '21'")
+
+def gitflowHotfix = new File(projectDir, ".github/workflows/gitflow-hotfix.yml")
+def gitflowHotfixContent = gitflowHotfix.text
+assert gitflowHotfixContent.contains("java-version: '21'")
 
 println "Java 21 archetype generation test passed!"
 return true
