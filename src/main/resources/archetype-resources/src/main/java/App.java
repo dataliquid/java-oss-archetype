@@ -3,9 +3,9 @@ package ${package};
 import java.util.logging.Logger;
 
 public class App {
-    
+
     private static final Logger LOGGER = Logger.getLogger(App.class.getName());
-    
+
     public String getGreeting() {
         return "Hello from dataliquid Open Source Software!";
     }

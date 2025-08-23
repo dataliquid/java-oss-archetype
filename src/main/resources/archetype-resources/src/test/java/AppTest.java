@@ -1,9 +1,10 @@
 package ${package};
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 class AppTest {
 
@@ -31,7 +32,6 @@ class AppTest {
     @Test
     @DisplayName("Test greeting contains dataliquid")
     void testGetGreetingContainsDataLiquid() {
-        assertTrue(app.getGreeting().contains("dataliquid"), 
-                  "Greeting should contain 'dataliquid'");
+        assertTrue(app.getGreeting().contains("dataliquid"), "Greeting should contain 'dataliquid'");
     }
 }
