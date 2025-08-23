@@ -1,0 +1,195 @@
+= Java Open Source Software Archetype
+:toc:
+:toc-placement!:
+:icons: font
+
+image:https://img.shields.io/badge/Java-17-blue.svg[Java 17]
+image:https://img.shields.io/badge/JUnit-5-green.svg[JUnit 5]
+image:https://img.shields.io/badge/License-Apache%202.0-blue.svg[Apache 2.0]
+
+Maven archetype for dataliquid Open Source Software Java projects with standardized configuration and best practices.
+
+toc::[]
+
+== Features
+
+* Configurable Java version (default: 17, supports 11, 17, 21+)
+* JUnit 5 with example tests
+* dataliquid parent-oss POM integration (version 2.3.1)
+* PMD code quality checks
+* Code formatting with formatter-maven-plugin
+* Pre-configured `.gitignore`
+* Application properties template
+* GitHub Actions workflows:
+  ** CI workflow for master/develop branches
+  ** Dependency vulnerability checks
+  ** Gitflow release automation
+  ** Gitflow hotfix automation
+
+== Prerequisites
+
+* Java 17 or higher
+* Maven 3.6.3 or higher
+
+== Installation
+
+=== From Source (Development)
+
+Clone and install the archetype locally:
+
+[source,bash]
+----
+git clone https://github.com/dataliquid/java-oss-archetype.git
+cd java-oss-archetype
+mvn clean install
+----
+
+=== From Maven Central (When Published)
+
+Once published, the archetype will be available directly from Maven Central and no local installation will be required.
+
+== Usage
+
+=== Interactive Mode
+
+Simply run:
+
+[source,bash]
+----
+mvn archetype:generate \
+  -DarchetypeGroupId=com.dataliquid.maven \
+  -DarchetypeArtifactId=java-oss-archetype \
+  -DarchetypeVersion=1.0.0-SNAPSHOT
+----
+
+Maven will prompt you for all required parameters.
+
+=== Quick Start (One-liner)
+
+[source,bash]
+----
+mvn archetype:generate -DarchetypeGroupId=com.dataliquid.maven -DarchetypeArtifactId=java-oss-archetype -DarchetypeVersion=1.0.0-SNAPSHOT -DgroupId=com.yourcompany -DartifactId=your-project -Dversion=1.0.0-SNAPSHOT -Dpackage=com.yourcompany.project -DjavaVersion=17 -DinteractiveMode=false
+----
+
+=== Formatted Command
+
+[source,bash]
+----
+mvn archetype:generate \
+  -DarchetypeGroupId=com.dataliquid.maven \
+  -DarchetypeArtifactId=java-oss-archetype \
+  -DarchetypeVersion=1.0.0-SNAPSHOT \
+  -DgroupId=com.yourcompany \
+  -DartifactId=your-project \
+  -Dversion=1.0.0-SNAPSHOT \
+  -Dpackage=com.yourcompany.project \
+  -DjavaVersion=17 \
+  -DinteractiveMode=false
+----
+
+=== Example with Java 21
+
+[source,bash]
+----
+mvn archetype:generate \
+  -DarchetypeGroupId=com.dataliquid.maven \
+  -DarchetypeArtifactId=java-oss-archetype \
+  -DarchetypeVersion=1.0.0-SNAPSHOT \
+  -DgroupId=com.yourcompany \
+  -DartifactId=your-project \
+  -Dversion=1.0.0-SNAPSHOT \
+  -Dpackage=com.yourcompany.project \
+  -DjavaVersion=21 \
+  -DinteractiveMode=false
+----
+
+=== Parameters
+
+[cols="1,2,1", options="header"]
+|===
+|Parameter
+|Description
+|Default Value
+
+|`groupId`
+|Maven group ID for your project
+|`com.dataliquid`
+
+|`artifactId`
+|Maven artifact ID for your project
+|`my-app`
+
+|`version`
+|Initial version of your project
+|`1.0.0-SNAPSHOT`
+
+|`package`
+|Base package for Java classes (optional)
+|`${groupId}`
+
+|`javaVersion`
+|Java version for the project (11, 17, 21, etc.)
+|`17`
+|===
+
+== Generated Project Structure
+
+[source]
+----
+your-project/
+├── pom.xml
+├── LICENSE
+├── .gitignore
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       ├── dependency-check.yml
+│       ├── gitflow-release.yml
+│       └── gitflow-hotfix.yml
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/yourcompany/project/
+│   │   │       └── App.java
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/
+│       ├── java/
+│       │   └── com/yourcompany/project/
+│       │       └── AppTest.java
+│       └── resources/
+│           └── test.properties
+└── target/
+----
+
+
+== Parent POM
+
+The generated projects inherit from `com.dataliquid:parent-oss:2.3.1`, which provides:
+
+* Standardized plugin configurations
+* Code quality checks (PMD)
+* Automatic code formatting
+* Central repository publishing setup
+* Common dependency management
+
+== Testing
+
+The archetype includes integration tests that verify the generated project:
+
+[source,bash]
+----
+mvn clean verify
+----
+
+== License
+
+This project is licensed under the Apache License, Version 2.0. See the LICENSE file for details.
+
+== Contributing
+
+Contributions are welcome! Please feel free to submit a pull request.
+
+== Support
+
+For issues and questions, please create an issue in the project repository.
