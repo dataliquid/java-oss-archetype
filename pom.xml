@@ -19,6 +19,12 @@
     <name>Java Open Source Software Archetype</name>
     <description>Maven archetype for dataliquid Open Source Software Java projects with Java 17 and JUnit 5</description>
 
+    <scm>
+        <connection>scm:git:git://github.com/dataliquid/java-oss-archetype.git</connection>
+        <developerConnection>scm:git:ssh://github.com:dataliquid/java-oss-archetype.git</developerConnection>
+        <url>https://github.com/dataliquid/java-oss-archetype</url>
+    </scm>
+
     <properties>
         <archetype-packaging.version>3.2.1</archetype-packaging.version>
     </properties>
