@@ -3,6 +3,8 @@
 :toc-placement!:
 :icons: font
 
+image:https://github.com/dataliquid/java-oss-archetype/actions/workflows/ci.yml/badge.svg[CI Build,link=https://github.com/dataliquid/java-oss-archetype/actions/workflows/ci.yml]
+image:https://img.shields.io/maven-central/v/com.dataliquid.maven/java-oss-archetype.svg[Maven Central,link=https://search.maven.org/artifact/com.dataliquid.maven/java-oss-archetype]
 image:https://img.shields.io/badge/Java-17-blue.svg[Java 17]
 image:https://img.shields.io/badge/JUnit-5-green.svg[JUnit 5]
 image:https://img.shields.io/badge/License-Apache%202.0-blue.svg[Apache 2.0]
